@@ -1,6 +1,6 @@
 package practice.designpatterns.Introduction;
 
-abstract public class Dog {
+public abstract class Dog {
     BarkBehavior barkBehavior;
     PlayBehavior playBehavior;
 

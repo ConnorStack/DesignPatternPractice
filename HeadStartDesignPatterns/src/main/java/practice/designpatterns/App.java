@@ -8,6 +8,8 @@ import practice.designpatterns.Introduction.PlayBehavior;
 import practice.designpatterns.Introduction.PlayNotAtAll;
 import practice.designpatterns.Introduction.SquidDog;
 import practice.designpatterns.Introduction.WilburDog;
+import practice.designpatterns.StrategyPattern.Characters;
+import practice.designpatterns.StrategyPattern.Queen;
 
 /**
  * Hello world!
@@ -26,18 +28,23 @@ public class App
         // light.isOn();
 
         
-        Dog squidDog = new SquidDog();
-        squidDog.performBark();
-        squidDog.performPlay();
+        // Dog squidDog = new SquidDog();
+        // squidDog.performBark();
+        // squidDog.performPlay();
 
-        Dog bulmaDog = new BulmaDog();
-        bulmaDog.performBark();
-        bulmaDog.performPlay();
+        // Dog bulmaDog = new BulmaDog();
+        // bulmaDog.performBark();
+        // bulmaDog.performPlay();
 
-        Dog wilburDog = new WilburDog();
-        wilburDog.performBark();
-        wilburDog.performPlay();
-        wilburDog.setPlayBehavior(new PlayNotAtAll());
-        wilburDog.performPlay();
+        // Dog wilburDog = new WilburDog();
+        // wilburDog.performBark();
+        // wilburDog.performPlay();
+        // wilburDog.setPlayBehavior(new PlayNotAtAll());
+        // wilburDog.performPlay();
+        Characters queenCharacter = new Queen();
+        queenCharacter.utilizeWeaponBehavior();
+
+
+        
     }
 }
