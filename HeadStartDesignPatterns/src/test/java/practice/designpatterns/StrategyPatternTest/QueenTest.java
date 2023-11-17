@@ -23,16 +23,14 @@ public class QueenTest {
     }
 
     @Test
-    public void testQueenWithBowAndArrow(){
-        
+    public void testQueenWithBowAndArrow()
+    {
         ByteArrayOutputStream outputStreamCaptor  = new ByteArrayOutputStream();
-        //what does setout do? 
         System.setOut(new PrintStream(outputStreamCaptor));
-        
-        String output = "Shoot bow and arrow.";
         queen.utilizeWeaponBehavior();
-        System.setOut(System.out);
+        
+        String expectedOutput = "Shoot bow and arrow.";
 
-        assertEquals(output, outputStreamCaptor.toString().trim());
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
 }
