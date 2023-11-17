@@ -1,4 +1,4 @@
-package practice.designpatterns;
+package practice.designpatterns.StrategyPatternTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
