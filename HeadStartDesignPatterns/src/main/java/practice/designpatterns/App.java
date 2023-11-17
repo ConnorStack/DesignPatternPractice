@@ -4,7 +4,10 @@ import practice.designpatterns.CommandPattern.Light;
 import practice.designpatterns.CommandPattern.LightsOnCommand;
 import practice.designpatterns.Introduction.BulmaDog;
 import practice.designpatterns.Introduction.Dog;
+import practice.designpatterns.Introduction.PlayBehavior;
+import practice.designpatterns.Introduction.PlayNotAtAll;
 import practice.designpatterns.Introduction.SquidDog;
+import practice.designpatterns.Introduction.WilburDog;
 
 /**
  * Hello world!
@@ -30,5 +33,11 @@ public class App
         Dog bulmaDog = new BulmaDog();
         bulmaDog.performBark();
         bulmaDog.performPlay();
+
+        Dog wilburDog = new WilburDog();
+        wilburDog.performBark();
+        wilburDog.performPlay();
+        wilburDog.setPlayBehavior(new PlayNotAtAll());
+        wilburDog.performPlay();
     }
 }
