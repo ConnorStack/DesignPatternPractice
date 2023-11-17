@@ -11,4 +11,12 @@ abstract public class Dog {
     public void performPlay(){
         playBehavior.play();
     }
+
+    public void setBarkBehavior(BarkBehavior barkBehavior){
+        this.barkBehavior = barkBehavior;
+    }
+
+    public void setPlayBehavior(PlayBehavior playBehavior){
+        this.playBehavior = playBehavior;
+    }
 }
