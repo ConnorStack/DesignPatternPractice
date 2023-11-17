@@ -6,4 +6,8 @@ public abstract class Characters {
     public void utilizeWeaponBehavior(){
         weaponBehavior.useWeapon();
     }
+
+    public void setWeaponBehavior(WeaponBehavior weaponBehavior){
+        this.weaponBehavior = weaponBehavior;
+    }
 }

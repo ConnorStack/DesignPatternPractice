@@ -9,10 +9,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import practice.designpatterns.StrategyPattern.Characters;
+import practice.designpatterns.StrategyPattern.SwordBehavior;
 import practice.designpatterns.StrategyPattern.Troll;
 
 public class TrollTest {
     private Characters troll;
+    private String expectedOutput;
 
     @BeforeEach
     public void setUp() {
@@ -25,7 +27,20 @@ public class TrollTest {
         System.setOut(new PrintStream(outputStreamCaptor));
         troll.utilizeWeaponBehavior();
 
-        String expectedOutput = "Chop chop";
+        expectedOutput = "Chop chop";
+
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+    }
+
+    @Test
+    public void testTrollResetToSwordBehavior(){
+        ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStreamCaptor));
+
+        troll.setWeaponBehavior(new SwordBehavior());
+        troll.utilizeWeaponBehavior();
+
+        expectedOutput = "Slashy slashy";
 
         assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
