@@ -15,16 +15,16 @@ public class TrollTest {
     private Characters troll;
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         troll = new Troll();
     }
 
     @Test
-    public void testTrollWithAxeBehavior(){
+    public void testTrollWithAxeBehavior() {
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
         troll.utilizeWeaponBehavior();
-        
+
         String expectedOutput = "Chop chop";
 
         assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
