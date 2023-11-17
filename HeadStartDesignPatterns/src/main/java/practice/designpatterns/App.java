@@ -2,6 +2,7 @@ package practice.designpatterns;
 
 import practice.designpatterns.CommandPattern.Light;
 import practice.designpatterns.CommandPattern.LightsOnCommand;
+import practice.designpatterns.Introduction.BulmaDog;
 import practice.designpatterns.Introduction.Dog;
 import practice.designpatterns.Introduction.SquidDog;
 
@@ -24,6 +25,10 @@ public class App
         
         Dog squidDog = new SquidDog();
         squidDog.performBark();
+        squidDog.performPlay();
 
+        Dog bulmaDog = new BulmaDog();
+        bulmaDog.performBark();
+        bulmaDog.performPlay();
     }
 }
