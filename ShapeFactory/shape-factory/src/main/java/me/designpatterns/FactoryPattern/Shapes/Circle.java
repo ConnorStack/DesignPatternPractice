@@ -1,4 +1,4 @@
-package me.designpatterns.Shapes;
+package me.designpatterns.FactoryPattern.Shapes;
 
 public class Circle extends Shape{
     private double pi = Math.PI;

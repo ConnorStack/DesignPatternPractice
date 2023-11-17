@@ -2,8 +2,8 @@ package me.designpatterns;
 
 import java.text.DecimalFormat;
 
-import me.designpatterns.Shapes.Circle;
-import me.designpatterns.Shapes.Rectangle;
+import me.designpatterns.FactoryPattern.Shapes.Circle;
+import me.designpatterns.FactoryPattern.Shapes.Rectangle;
 
 /**
  * Hello world!
@@ -25,8 +25,6 @@ public class App
         // DecimalFormat decimalFormat = new DecimalFormat("#.##");
         // String firmattedArea = decimalFormat.format(circleArea);
         // System.out.println("Area is: " + firmattedArea);
-
-
 
     }
 }
