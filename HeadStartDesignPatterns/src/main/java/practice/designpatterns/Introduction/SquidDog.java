@@ -1,4 +1,4 @@
-package me.designpatterns.Introduction;
+package practice.designpatterns.Introduction;
 
 public class SquidDog extends Dog {
 

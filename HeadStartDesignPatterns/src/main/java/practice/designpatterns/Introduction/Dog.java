@@ -1,4 +1,4 @@
-package me.designpatterns.Introduction;
+package practice.designpatterns.Introduction;
 
 abstract public class Dog {
     BarkBehavior barkBehavior;
