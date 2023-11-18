@@ -1,19 +1,29 @@
 package practice.designpatterns.StatePattern;
 
 public class NoQuartarState implements State {
-    public void insertQuarter() {
+    GumballMachine gumballMachine;
 
+    public NoQuartarState(){
+
+    }
+
+    public NoQuartarState(GumballMachine gumballMachine){
+        this.gumballMachine = gumballMachine;
+    }
+
+    public void insertQuarter() {
+        System.out.println("You inserted a quarter");
     }
 
     public void ejectQuarter() {
-
+        System.out.println();
     }
 
     public void turnCrank() {
-
+        System.out.println();
     }
 
     public void dispense() {
-
+        System.out.println();
     }
 }
