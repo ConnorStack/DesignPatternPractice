@@ -65,8 +65,12 @@ public class GumballMachine {
         return this.soldOutState;
     }
 
+    
+    public State getWinnerState(){
+        return this.winnerState;
+    }
+    
     public int getCount(){
         return this.count;
     }
-
 }
