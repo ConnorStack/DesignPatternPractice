@@ -16,7 +16,7 @@ public class NoQuartarState implements State {
     }
 
     public void ejectQuarter() {
-        System.out.println();
+        System.out.println("You haven't inserted a quarter");
     }
 
     public void turnCrank() {

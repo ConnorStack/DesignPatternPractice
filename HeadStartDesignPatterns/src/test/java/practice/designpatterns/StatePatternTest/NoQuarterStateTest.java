@@ -22,13 +22,24 @@ public class NoQuarterStateTest {
     }
 
     @Test
-    public void testNoQuarterState(){
+    public void testNoQuarterStateInsertQuarter(){
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
         noQuartarState.insertQuarter();
 
         expectedOutput = "You inserted a quarter";
 
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+    }
+
+    @Test
+    public void testNoQuarterStateEjectQuarter(){
+        ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStreamCaptor));
+        noQuartarState.ejectQuarter();
+
+        expectedOutput = "You haven't inserted a quarter";
+        
         assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
 }
