@@ -20,7 +20,7 @@ public class HasQuarterState implements State {
     }
 
     public void turnCrank() {
-        System.out.println("Quarter accepted");
+        System.out.println("Crank turned...Quarter accepted");
         int winner = randomWinner.nextInt(10);
 
         if((winner == 7 )&& (gumballMachine.getCount() >= 2)){

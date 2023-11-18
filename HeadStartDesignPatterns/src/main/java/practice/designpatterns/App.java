@@ -25,11 +25,10 @@ public class App
     {
         statePatternDemo();
 
-
     }
 
     public static void statePatternDemo(){
-        GumballMachine gumballMachine = new GumballMachine(5);
+        GumballMachine gumballMachine = new GumballMachine(100);
         System.out.println(gumballMachine);
 
         gumballMachine.insertQuarter();
