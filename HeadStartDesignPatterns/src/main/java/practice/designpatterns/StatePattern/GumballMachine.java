@@ -13,6 +13,14 @@ public class GumballMachine {
         hasQuarterState = new HasQuarterState(this);
         noQuarterState = new NoQuarterState(this);
         soldState = new SoldState(this);
+        soldOutState = new SoldOutState(this);
+
+        this.count = numberOfGumballs;
+        if(numberOfGumballs > 0){
+            state = noQuarterState;
+        }else{
+            state = soldOutState;
+        }
     }
 
     public void insertQuarter(){
