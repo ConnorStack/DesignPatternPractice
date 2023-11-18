@@ -1,7 +1,10 @@
 package practice.designpatterns.StatePattern;
 
+import java.util.Random;
+
 public class HasQuarterState implements State {
     private GumballMachine gumballMachine;
+    Random randomWinner = new Random(System.currentTimeMillis());
 
     public HasQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
@@ -18,7 +21,13 @@ public class HasQuarterState implements State {
 
     public void turnCrank() {
         System.out.println("Quarter accepted");
-        gumballMachine.setState(gumballMachine.getSoldState());
+        int winner = randomWinner.nextInt(10);
+
+        if((winner == 7 )&& (gumballMachine.getCount() >= 2)){
+            gumballMachine.setState(gumballMachine.getWinnerState());
+        }else{
+            gumballMachine.setState(gumballMachine.getSoldState());
+        }
     }
 
     public void dispense() {
