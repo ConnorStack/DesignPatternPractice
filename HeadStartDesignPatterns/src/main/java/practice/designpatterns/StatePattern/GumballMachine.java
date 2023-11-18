@@ -73,4 +73,13 @@ public class GumballMachine {
     public int getCount(){
         return this.count;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("\nGumball Machine");
+        result.append("\nCurrent State: ").append(state.getClass().getSimpleName());
+        result.append("\nGumballs Count: ").append(count);
+        return result.toString();
+    }
 }

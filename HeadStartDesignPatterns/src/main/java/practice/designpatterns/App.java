@@ -8,6 +8,7 @@ import practice.designpatterns.Introduction.PlayBehavior;
 import practice.designpatterns.Introduction.PlayNotAtAll;
 import practice.designpatterns.Introduction.SquidDog;
 import practice.designpatterns.Introduction.WilburDog;
+import practice.designpatterns.StatePattern.GumballMachine;
 import practice.designpatterns.StrategyPattern.Characters;
 import practice.designpatterns.StrategyPattern.Queen;
 
@@ -43,8 +44,20 @@ public class App
         // wilburDog.performPlay();
         Characters queenCharacter = new Queen();
         queenCharacter.utilizeWeaponBehavior();
+    }
 
+    public void statePatternDemo(){
+        GumballMachine gumballMachine = new GumballMachine(5);
+        System.out.println(gumballMachine);
 
-        
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        System.out.println(gumballMachine);
+        for (int i = 0; i < 15; i++) {
+            gumballMachine.insertQuarter();
+            gumballMachine.turnCrank();
+            System.out.println(gumballMachine);
+        }
+    
     }
 }
