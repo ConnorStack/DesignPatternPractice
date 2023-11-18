@@ -23,11 +23,12 @@ public class App
 {
     public static void main( String[] args )
     {
+        statePatternDemo();
 
 
     }
 
-    public void statePatternDemo(){
+    public static void statePatternDemo(){
         GumballMachine gumballMachine = new GumballMachine(5);
         System.out.println(gumballMachine);
 
@@ -41,7 +42,7 @@ public class App
         }
     }
 
-    public void strategyPatternDemo(){
+    public static void strategyPatternDemo(){
         Characters queen = new Queen();
         Characters king = new King();
         Characters troll = new Troll();
@@ -69,7 +70,7 @@ public class App
         wilburDog.performPlay();
     }
 
-    public void commandPatternDemo(){
+    public static void commandPatternDemo(){
         Light light = new Light();
         LightsOnCommand lightsOnCommand = new LightsOnCommand(light);
         light.isOn();
