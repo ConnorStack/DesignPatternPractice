@@ -10,7 +10,9 @@ public class GumballMachine {
     int count = 0;
 
     public GumballMachine(int numberOfGumballs){
+        hasQuarterState = new HasQuarterState(this);
         noQuarterState = new NoQuarterState(this);
+        soldState = new SoldState(this);
     }
 
 }
