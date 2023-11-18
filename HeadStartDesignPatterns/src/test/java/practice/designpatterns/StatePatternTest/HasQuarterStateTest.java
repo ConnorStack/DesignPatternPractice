@@ -34,24 +34,33 @@ public class HasQuarterStateTest {
     public void testHasQuarterStateEjectQuarter(){
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
+        hasQuarterState.ejectQuarter();
 
         expectedOutput = "Returning quarter";
+
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testHasQuarterStateTurnCrank(){
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
+        hasQuarterState.turnCrank();
 
         expectedOutput = "Quarter accepted";
+
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testHasQuarterStateDispense(){
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
+        hasQuarterState.dispense();
 
         expectedOutput = "No gumball dispensed";
+
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
 }
 
