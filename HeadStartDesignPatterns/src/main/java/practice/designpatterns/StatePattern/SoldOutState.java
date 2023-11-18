@@ -1,6 +1,8 @@
 package practice.designpatterns.StatePattern;
 
 public class SoldOutState implements State {
+    
+    
     public void insertQuarter() {
 
     }

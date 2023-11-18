@@ -9,16 +9,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import practice.designpatterns.StatePattern.GumballMachine;
-import practice.designpatterns.StatePattern.NoQuartarState;
+import practice.designpatterns.StatePattern.NoQuarterState;
 
 public class NoQuarterStateTest {
-    private NoQuartarState noQuartarState;
+    private NoQuarterState noQuartarState;
     private GumballMachine gumballMachine;
     String expectedOutput;
     @BeforeEach
     public void setUp(){
         // gumballMachine = new GumballMachine();
-        noQuartarState = new NoQuartarState();
+        noQuartarState = new NoQuarterState();
     }
 
     @Test
@@ -39,7 +39,29 @@ public class NoQuarterStateTest {
         noQuartarState.ejectQuarter();
 
         expectedOutput = "You haven't inserted a quarter";
+
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+    }
+
+    @Test
+    public void testNoQuarterStateTurnCrank(){
+        ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStreamCaptor));
+        noQuartarState.turnCrank();
+
+        expectedOutput = "You turned, but there's no quarter";
+
+        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+    }
+
+    @Test
+    public void testNoQuarterStateDispense(){
+        ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStreamCaptor));
+        noQuartarState.dispense();
         
+        expectedOutput = "You need to pay first";
+
         assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
 }

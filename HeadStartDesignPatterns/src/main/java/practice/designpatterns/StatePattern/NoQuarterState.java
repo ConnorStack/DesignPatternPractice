@@ -1,13 +1,13 @@
 package practice.designpatterns.StatePattern;
 
-public class NoQuartarState implements State {
+public class NoQuarterState implements State {
     GumballMachine gumballMachine;
 
-    public NoQuartarState(){
+    public NoQuarterState(){
 
     }
 
-    public NoQuartarState(GumballMachine gumballMachine){
+    public NoQuarterState(GumballMachine gumballMachine){
         this.gumballMachine = gumballMachine;
     }
 
@@ -20,10 +20,10 @@ public class NoQuartarState implements State {
     }
 
     public void turnCrank() {
-        System.out.println();
+        System.out.println("You turned, but there's no quarter");
     }
 
     public void dispense() {
-        System.out.println();
+        System.out.println("You need to pay first");
     }
 }
