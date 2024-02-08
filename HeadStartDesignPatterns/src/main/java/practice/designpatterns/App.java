@@ -19,15 +19,13 @@ import practice.designpatterns.StrategyPattern.Troll;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         statePatternDemo();
 
     }
 
-    public static void statePatternDemo(){
+    public static void statePatternDemo() {
         GumballMachine gumballMachine = new GumballMachine(100);
         System.out.println(gumballMachine);
 
@@ -41,7 +39,7 @@ public class App
         }
     }
 
-    public static void strategyPatternDemo(){
+    public static void strategyPatternDemo() {
         Characters queen = new Queen();
         Characters king = new King();
         Characters troll = new Troll();
@@ -53,7 +51,7 @@ public class App
         knight.utilizeWeaponBehavior();
     }
 
-    public void strategyPatternWithDoggos(){
+    public void strategyPatternWithDoggos() {
         Dog squidDog = new SquidDog();
         squidDog.performBark();
         squidDog.performPlay();
@@ -69,12 +67,16 @@ public class App
         wilburDog.performPlay();
     }
 
-    public static void commandPatternDemo(){
+    public static void commandPatternDemo() {
         Light light = new Light();
         LightsOnCommand lightsOnCommand = new LightsOnCommand(light);
         light.isOn();
 
         lightsOnCommand.execute();
         light.isOn();
+    }
+
+    public static void observerPatternDemo() {
+
     }
 }
