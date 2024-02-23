@@ -8,6 +8,8 @@ import practice.designpatterns.Introduction.PlayBehavior;
 import practice.designpatterns.Introduction.PlayNotAtAll;
 import practice.designpatterns.Introduction.SquidDog;
 import practice.designpatterns.Introduction.WilburDog;
+import practice.designpatterns.ObserverPattern.CurrentConditionsDisplay;
+import practice.designpatterns.ObserverPattern.WeatherData;
 import practice.designpatterns.StatePattern.GumballMachine;
 import practice.designpatterns.StrategyPattern.Characters;
 import practice.designpatterns.StrategyPattern.King;
@@ -21,7 +23,7 @@ import practice.designpatterns.StrategyPattern.Troll;
  */
 public class App {
     public static void main(String[] args) {
-        statePatternDemo();
+        observerPatternDemo();
 
     }
 
@@ -77,6 +79,15 @@ public class App {
     }
 
     public static void observerPatternDemo() {
+        WeatherData weatherData = new WeatherData();
 
+        CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
+        // So each subsequent object of CurrentConditionsDisplay would be an example of
+        // another observer,
+        // And there could be a practically infinite number of observers, but we only
+        // want one subject of a similar kind
+        weatherData.setMeasurements(80, 65, 30.4f);
+        weatherData.setMeasurements(82, 70, 29.2f);
+        weatherData.setMeasurements(78, 90, 29.2f);
     }
 }

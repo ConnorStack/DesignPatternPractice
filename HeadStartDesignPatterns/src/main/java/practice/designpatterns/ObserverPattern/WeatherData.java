@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherData implements Subject {
+    // Important distiction, this is not a List of CurrentConditionsDisplays,
+    // It is a list of Observer objects.
     private List<Observer> observers;
     private float temperature;
     private float humidity;
@@ -27,14 +29,15 @@ public class WeatherData implements Subject {
     public void notifyObservers() {
         for (Observer observer : observers) {
             observer.update(temperature, humidity, pressure);
+
         }
     }
 
-    public void measurementsChanged(){
+    public void measurementsChanged() {
         notifyObservers();
     }
 
-    public void setMeasurements(float temperature, float humidity, float pressure){
+    public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
