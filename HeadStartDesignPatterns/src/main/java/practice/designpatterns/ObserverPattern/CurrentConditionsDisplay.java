@@ -19,6 +19,13 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     }
 
     @Override
+    public void update() {
+        this.temperature = weatherData.getTemperature();
+        this.humidity = weatherData.getHumidity();
+        display();
+    }
+
+    @Override
     public void display() {
         System.out.println("Current conditions: " + temperature
                 + "F degrees and " + humidity + "% humidity");
