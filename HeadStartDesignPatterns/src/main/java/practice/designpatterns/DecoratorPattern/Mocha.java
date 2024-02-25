@@ -10,6 +10,6 @@ public class Mocha extends CondimentDecorator {
     }
 
     public double cost() {
-        return beverage.cost() + .50;
+        return beverage.cost() + 1.50;
     }
 }

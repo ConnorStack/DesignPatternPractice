@@ -3,7 +3,12 @@ package practice.designpatterns;
 import practice.designpatterns.CommandPattern.Light;
 import practice.designpatterns.CommandPattern.LightsOnCommand;
 import practice.designpatterns.DecoratorPattern.Beverage;
+import practice.designpatterns.DecoratorPattern.DarkRoast;
 import practice.designpatterns.DecoratorPattern.Espresso;
+import practice.designpatterns.DecoratorPattern.HouseBlend;
+import practice.designpatterns.DecoratorPattern.Mocha;
+import practice.designpatterns.DecoratorPattern.Soy;
+import practice.designpatterns.DecoratorPattern.WhipCream;
 import practice.designpatterns.Introduction.BulmaDog;
 import practice.designpatterns.Introduction.Dog;
 import practice.designpatterns.Introduction.PlayBehavior;
@@ -96,5 +101,18 @@ public class App {
     public static void decoratorPatternDemo() {
         Beverage beverage = new Espresso();
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
+
+        Beverage beverage2 = new DarkRoast();
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Soy(beverage2);
+        beverage2 = new WhipCream(beverage2);
+        System.out.println(beverage2.getDescription() + " $" + beverage2.cost());
+
+        Beverage beverage3 = new HouseBlend();
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new Soy(beverage3);
+        beverage3 = new WhipCream(beverage3);
+        System.out.println(beverage3.getDescription() + " $" + beverage3.cost());
+
     }
 }
