@@ -2,6 +2,8 @@ package practice.designpatterns;
 
 import practice.designpatterns.CommandPattern.Light;
 import practice.designpatterns.CommandPattern.LightsOnCommand;
+import practice.designpatterns.DecoratorPattern.Beverage;
+import practice.designpatterns.DecoratorPattern.Espresso;
 import practice.designpatterns.Introduction.BulmaDog;
 import practice.designpatterns.Introduction.Dog;
 import practice.designpatterns.Introduction.PlayBehavior;
@@ -23,7 +25,7 @@ import practice.designpatterns.StrategyPattern.Troll;
  */
 public class App {
     public static void main(String[] args) {
-        observerPatternDemo();
+        decoratorPatternDemo();
 
     }
 
@@ -89,5 +91,10 @@ public class App {
         weatherData.setMeasurements(80, 65, 30.4f);
         weatherData.setMeasurements(82, 70, 29.2f);
         weatherData.setMeasurements(78, 90, 29.2f);
+    }
+
+    public static void decoratorPatternDemo() {
+        Beverage beverage = new Espresso();
+        System.out.println(beverage.getDescription() + " $" + beverage.cost());
     }
 }
